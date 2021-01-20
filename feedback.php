@@ -18,7 +18,7 @@ if(!isset($_SESSION['userId'])){ header('location:login.php');}
         $user = $_POST['email'];
         $pass = $_POST['password'];
        
-        $result = $con->query("select * from userAccounts where email='$user' AND password='$pass'");
+        $result = $con->query("select * from useraccounts where email='$user' AND password='$pass'");
         if($result->num_rows>0)
         { 
           session_start();

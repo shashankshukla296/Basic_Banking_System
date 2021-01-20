@@ -18,7 +18,7 @@ if(!isset($_SESSION['userId'])){ header('location:login.php');}
         $user = $_POST['email'];
         $pass = $_POST['password'];
        
-        $result = $con->query("select * from userAccounts where email='$user' AND password='$pass'");
+        $result = $con->query("select * from useraccounts where email='$user' AND password='$pass'");
         if($result->num_rows>0)
         { 
           session_start();
@@ -76,7 +76,7 @@ if(!isset($_SESSION['userId'])){ header('location:login.php');}
       <?php if (isset($_POST['get'])) 
       {
         $array2 = $con->query("select * from otheraccounts where accountNo = '$_POST[otherNo]'");
-        $array3 = $con->query("select * from userAccounts where accountNo = '$_POST[otherNo]'");
+        $array3 = $con->query("select * from useraccounts where accountNo = '$_POST[otherNo]'");
         {
           if ($array2->num_rows > 0) 
           { $row2 = $array2->fetch_assoc();

@@ -1,7 +1,7 @@
 <?php 
-    $con = new mysqli('localhost','root','','mybank');
+    $con = new mysqli('bwemwkz4cy4gxtv97uth-mysql.services.clever-cloud.com','uzqnhxxsv9ycnhcb','QLy5EosyshvvmC8ATNj5','bwemwkz4cy4gxtv97uth');
     define('bankName', 'MCB Bank',true);
-    $ar = $con->query("select * from userAccounts,branch where id = '$_SESSION[userId]' AND userAccounts.branch = branch.branchId");
+    $ar = $con->query("select * from useraccounts,branch where id = '$_SESSION[userId]' AND useraccounts.branch = branch.branchId");
     $userData = $ar->fetch_assoc();
 ?>
 <script type="text/javascript">

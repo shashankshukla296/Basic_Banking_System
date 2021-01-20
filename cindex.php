@@ -80,7 +80,7 @@ if(!isset($_SESSION['cashId'])){ header('location:login.php');}
     <?php if (isset($_POST['get'])) 
       {
         $array2 = $con->query("select * from otheraccounts where accountNo = '$_POST[otherNo]'");
-        $array3 = $con->query("select * from userAccounts where accountNo = '$_POST[otherNo]'");
+        $array3 = $con->query("select * from useraccounts where accountNo = '$_POST[otherNo]'");
         {
           if ($array2->num_rows > 0) 
           { $row2 = $array2->fetch_assoc();

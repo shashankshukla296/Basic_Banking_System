@@ -1,23 +1,23 @@
 <?php 
 function setBalance($amount,$process,$accountNo)
 {
-	$con = new mysqli('localhost','root','','mybank');
-	$array = $con->query("select * from userAccounts where accountNo='$accountNo'");
+	$con = new mysqli('bwemwkz4cy4gxtv97uth-mysql.services.clever-cloud.com','uzqnhxxsv9ycnhcb','QLy5EosyshvvmC8ATNj5','bwemwkz4cy4gxtv97uth');
+    $array = $con->query("select * from useraccounts where accountNo='$accountNo'");
 	$row = $array->fetch_assoc();
 	if ($process == 'credit') 
 	{
 		$balance = $row['balance'] + $amount;
-		return $con->query("update userAccounts set balance = '$balance' where accountNo = '$accountNo'");
+		return $con->query("update useraccounts set balance = '$balance' where accountNo = '$accountNo'");
 	}else
 	{
 		$balance = $row['balance'] - $amount;
-		return $con->query("update userAccounts set balance = '$balance' where accountNo = '$accountNo'");
+		return $con->query("update useraccounts set balance = '$balance' where accountNo = '$accountNo'");
 	}
 }
 function setOtherBalance($amount,$process,$accountNo)
 {
-	$con = new mysqli('localhost','root','','mybank');
-	$array = $con->query("select * from otheraccounts where accountNo='$accountNo'");
+	$con = new mysqli('bwemwkz4cy4gxtv97uth-mysql.services.clever-cloud.com','uzqnhxxsv9ycnhcb','QLy5EosyshvvmC8ATNj5','bwemwkz4cy4gxtv97uth');
+    $array = $con->query("select * from otheraccounts where accountNo='$accountNo'");
 	$row = $array->fetch_assoc();
 	if ($process == 'credit') 
 	{
@@ -31,8 +31,8 @@ function setOtherBalance($amount,$process,$accountNo)
 }
 function makeTransaction($action,$amount,$other)
 {
-	$con = new mysqli('localhost','root','','mybank');
-	if ($action == 'transfer')
+	$con = new mysqli('bwemwkz4cy4gxtv97uth-mysql.services.clever-cloud.com','uzqnhxxsv9ycnhcb','QLy5EosyshvvmC8ATNj5','bwemwkz4cy4gxtv97uth');
+    if ($action == 'transfer')
 	{
 		return $con->query("insert into transaction (action,debit,other,userId) values ('transfer','$amount','$other','$_SESSION[userId]')");
 	}
@@ -49,8 +49,8 @@ function makeTransaction($action,$amount,$other)
 }
 function makeTransactionCashier($action,$amount,$other,$userId)
 {
-	$con = new mysqli('localhost','root','','mybank');
-	if ($action == 'transfer')
+	$con = new mysqli('bwemwkz4cy4gxtv97uth-mysql.services.clever-cloud.com','uzqnhxxsv9ycnhcb','QLy5EosyshvvmC8ATNj5','bwemwkz4cy4gxtv97uth');
+    if ($action == 'transfer')
 	{
 		return $con->query("insert into transaction (action,debit,other,userId) values ('transfer','$amount','$other','$userId')");
 	}

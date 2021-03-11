@@ -5,7 +5,7 @@
 	<?php require 'assets/autoloader.php'; ?>
 	<?php require 'assets/function.php'; ?>
 	<?php
-    $con = new mysqli('bwemwkz4cy4gxtv97uth-mysql.services.clever-cloud.com','uzqnhxxsv9ycnhcb','QLy5EosyshvvmC8ATNj5','bwemwkz4cy4gxtv97uth');
+    $con = new mysqli('bbsqummi0vue8ewcefga-mysql.services.clever-cloud.com','uzqnhxxsv9ycnhcb','QLy5EosyshvvmC8ATNj5','bwemwkz4cy4gxtv97uth');
     define('bankName', 'Sparks Project : MCB Bank',true);
 	
 		$error = "";
